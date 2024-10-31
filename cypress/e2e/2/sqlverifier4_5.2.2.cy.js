@@ -6,7 +6,7 @@ describe('Header is working', () => {
         cy.get('button[type="submit"]').click();
     });
 
-    it('should display brand title', () => {
+    it('Should display brand title', () => {
         cy.get('.brand-title span').should('have.text', 'Sqlverifier');
     });
 
@@ -24,6 +24,29 @@ describe('Header is working', () => {
     it('Should display English button and check its visibility', () => {
         cy.contains('span', 'English').should('be.visible');
     });
+
+    it('Should click English button', ()=> {
+       cy.get("#header-tabs > li:nth-child(4) > a").click();
+       cy.contains("English").click();
+       cy.get(":nth-child(1) > .d-flex").should('have.text', "Home");
+    });
+
+    it('Should click French button', ()=> {
+        cy.get("#header-tabs > li:nth-child(4) > a").click();
+        cy.contains("Fran").click();
+        cy.get(":nth-child(1) > .d-flex").should('have.text', "Accueil");
+        });
+    it('Should click Русский button', ()=> {
+            cy.get("#header-tabs > li:nth-child(4) > a").click();
+            cy.contains("Русский").click();
+            cy.get(":nth-child(1) > .d-flex").should('have.text', "Главная");
+            });
+
+    it('Should click Українська button', ()=> {
+            cy.get("#header-tabs > li:nth-child(4) > a").click();
+            cy.contains("Українська").click();
+            cy.get(":nth-child(1) > .d-flex").should('have.text', "Головна");
+                });
 
     it('Swagger button navigates to Swagger docs', () => {
         cy.contains('span', 'Swagger').should('be.visible').click();
