@@ -1,8 +1,8 @@
 describe('Header is working', () => {
     beforeEach(() => {
         cy.visit('/login');
-        cy.get('input[name="username"]').type('yuliya'); 
-        cy.get('input[name="password"]').type('Zuzu'); 
+        cy.get('input[name="username"]').type(Cypress.env('username'));  
+        cy.get('input[name="password"]').type(Cypress.env('password')); 
         cy.get('button[type="submit"]').click();
     });
 
