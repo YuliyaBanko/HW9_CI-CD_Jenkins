@@ -4,7 +4,7 @@ describe('Header is working', () => {
         cy.get('input[name="username"]').type(Cypress.env('username'));  
         cy.get('input[name="password"]').type(Cypress.env('password')); 
         cy.get('button[type="submit"]').click();
-    });// мой хук, он уже был установлен до задания
+    });// мой хук, он раньше был установлен до задания
 
     it('Should display brand title', () => {
         cy.get('.brand-title span').should('have.text', 'Sqlverifier');
