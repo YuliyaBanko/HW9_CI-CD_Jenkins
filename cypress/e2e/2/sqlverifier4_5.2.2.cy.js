@@ -25,28 +25,21 @@ describe('Header is working', () => {
         cy.contains('span', 'English').should('be.visible');
     });
 
-    it('Should click English button', ()=> {
-       cy.get("#header-tabs > li:nth-child(4) > a").click();
-       cy.contains("English").click();
-       cy.get(":nth-child(1) > .d-flex").should('have.text', "Home");
+    it('English language', () => {
+        cy.switchLanguage('English', 'Home');
     });
 
-    it('Should click French button', ()=> {
-        cy.get("#header-tabs > li:nth-child(4) > a").click();
-        cy.contains("Fran").click();
-        cy.get(":nth-child(1) > .d-flex").should('have.text', "Accueil");
-        });
-    it('Should click Русский button', ()=> {
-            cy.get("#header-tabs > li:nth-child(4) > a").click();
-            cy.contains("Русский").click();
-            cy.get(":nth-child(1) > .d-flex").should('have.text', "Главная");
-            });
+    it('French language', () => {
+        cy.switchLanguage('Fran', 'Accueil');
+    });
 
-    it('Should click Українська button', ()=> {
-            cy.get("#header-tabs > li:nth-child(4) > a").click();
-            cy.contains("Українська").click();
-            cy.get(":nth-child(1) > .d-flex").should('have.text', "Головна");
-                });
+    it('Russian language', () => {
+        cy.switchLanguage('Русский', 'Главная');
+    });
+
+    it('Ukrainian language', () => {
+        cy.switchLanguage('Українська', 'Головна');
+    });
 
     it('Swagger button navigates to Swagger docs', () => {
         cy.contains('span', 'Swagger').should('be.visible').click();
@@ -71,7 +64,7 @@ describe('Header is working', () => {
         cy.url().should('eq', `${Cypress.config().baseUrl}account/password`);
     });
 
-    it('should Signout user', () => {
+    it('should Sign out user', () => {
         cy.contains('span', 'Account').should('be.visible').click();
         cy.get('[data-cy="logout"]').should('be.visible').click({ force: true });
         cy.url().should('eq', `${Cypress.config().baseUrl}logout`);
