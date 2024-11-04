@@ -9,7 +9,7 @@
     "cy:run:prod:chrome": "npx cypress run --config-file cypress-prod.config.js --browser chrome",
     "cy:run:prod:electron": "npx cypress run --config-file cypress-prod.config.js --browser electron",
     "cy:run:all": "npm run cy:run:prod:chrome && npm run cy:run:prod:electron",
-    "cy:run:all:dashboard": "npm run cy:run:prod:chrome --record --key d1fa67a5-da82-4ad9-a00d-e083be769963 && npm run cy:run:prod:electron --record --key d1fa67a5-da82-4ad9-a00d-e083be769963",
+    "cy:run:all:dashboard": "cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963 --browser chrome && cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963 --browser electron",
     "cy:run:stag": "npx cypress run --config-file cypress-staging.config.js",
     "cy:dashboard:prod": "npx cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963",
     "cy:dashboard:stag": "npx cypress run --config-file cypress-staging.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963"
