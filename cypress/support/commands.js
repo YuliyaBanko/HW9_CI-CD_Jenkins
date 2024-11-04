@@ -1,5 +1,36 @@
+Cypress.Commands.add('loginSQL', (username, password) => {
+    cy.visit('https://sqlverifier-live-6e21ca0ed768.herokuapp.com/login');
+    if (username) {
+        cy.get('input[name="username"]').type(username);
+    }
+    if (password) {
+        cy.get('input[name="password"]').type(password);
+    }
+    cy.get('button[type="submit"]').click();
+});
+
+Cypress.Commands.add('registrSQL', (username, newpassword1, newpassword2, email) => {
+    cy.visit('https://sqlverifier-live-6e21ca0ed768.herokuapp.com/account/register');
+
+    if (username) {
+        cy.get('input[name="username"]').type(username);
+    }
+    if (email) {
+        cy.get('input[name="email"]').type(email);
+    }
+    if (newpassword1) {
+        cy.get('input[name="firstPassword"]').type(newpassword1);
+    }
+
+    if (newpassword2) {
+        cy.get('input[name="secondPassword"]').type(newpassword2);
+    }
+    cy.get('button[type="submit"]').click();
+});
+
 Cypress.Commands.add('switchLanguage', (language, expectedText) => {
     cy.get("#header-tabs > li:nth-child(4) > a").click();
     cy.contains(language).click();
     cy.get(":nth-child(1) > .d-flex").should('have.text', expectedText);
 });
+

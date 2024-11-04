@@ -1,0 +1,15 @@
+[
+  {"username": "","password": "hello@cypress.io"},
+  { "username": "", "password": "Zuzu" },                  
+  { "username": "yuliya", "password": "" },                          
+  { "username": "invalidUser", "password": "Zuzu" },        
+  { "username": "yuliya", "password": "wrongPassword" },             
+  { "username": "specialChars!@#", "password": "Zuzu" },    
+  { "username": "validUser12345678901234567890", "password": "Zuzu" }, 
+  { "username": "yuliya", "password": "1" },                     
+  { "username": "", "password": "" },                                   
+  { "username": "   ", "password": "Zuzu" }                
+]
+
+  
+

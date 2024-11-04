@@ -1,0 +1,38 @@
+[
+    {
+        "username1": "",
+        "newpassword1": "hello@cypress.io", 
+        "newpassword2": "1@cypress.io",
+        "email": "1@cypress.io"
+    },
+    {
+        "username1": "testuser",
+        "newpassword1": "",
+        "newpassword2": "",
+        "email": "1@cypress.io"
+    },
+    {
+        "username1": "testuser",
+        "newpassword1": "hello@cypress.io", 
+        "newpassword2": "different@cypress.io",
+        "email": "1@cypress.io"
+    },
+    {
+        "username1": "testuser",
+        "newpassword1": "hello@cypress.io", 
+        "newpassword2": "1@cypress.io",
+        "email": "invalidemail"
+    },
+    {
+        "username1": "testuser",
+        "newpassword1": "hello@cypress.io", 
+        "newpassword2": "%&^(&^&(o",
+        "email": "testuser@cypress.io"
+    },
+    {
+        "username1": "testuser",
+        "newpassword1": "hello@cypress.io", 
+        "newpassword2": "1@cypress.io",
+        "email": ""
+    }
+]
