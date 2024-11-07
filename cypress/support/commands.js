@@ -34,3 +34,9 @@ Cypress.Commands.add('switchLanguage', (language, expectedText) => {
     cy.get(":nth-child(1) > .d-flex").should('have.text', expectedText);
 });
 
+
+Cypress.Commands.add('changePassword', (userNameSanta, newPassword) => {
+    cy.contains(userNameSanta).click({force:true});
+        cy.get('.layout-column-start > :nth-child(1) > .frm').type(newPassword);
+        cy.get(':nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm').type(newPassword);
+});
