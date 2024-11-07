@@ -3,6 +3,7 @@ import { LoginPageSQL } from '../../fixtures/pages/sqlloginpage';
 
 describe("Sqlverifier login - UI",()=> {
     it("User cant logIn with old password", ()=>{
+        
         let loginPageSQL = new LoginPageSQL();
         let oldPasswordSQL = "Koko";
         let newPasswordSQL = faker.internet.password(10);
