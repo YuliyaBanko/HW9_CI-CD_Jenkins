@@ -40,3 +40,12 @@ Cypress.Commands.add('changePassword', (userNameSanta, newPassword) => {
         cy.get('.layout-column-start > :nth-child(1) > .frm').type(newPassword);
         cy.get(':nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm').type(newPassword);
 });
+
+Cypress.Commands.add('changePasswordSQL', (oldPasswordSQL, newPasswordSQL) => {
+    cy.get('[data-cy="accountMenu"] > .d-flex > span').click();
+    cy.get('[data-cy="passwordItem"] > span').click();
+    cy.get('[data-cy="currentPassword"]').type(oldPasswordSQL);
+    cy.get('[data-cy="newPassword"]').type(newPasswordSQL);
+    cy.get('[data-cy="confirmPassword"]').type(newPasswordSQL);
+    cy.get('[data-cy="submit"] > span').click();
+});
