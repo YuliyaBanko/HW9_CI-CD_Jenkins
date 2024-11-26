@@ -1,4 +1,4 @@
-const testData = require("../../fixtures/registrdata.json");
+const testData = require("../../fixtures/registrdata.json")
 
 describe("Registration", () => {
     it("successfulRegistration", () => {
