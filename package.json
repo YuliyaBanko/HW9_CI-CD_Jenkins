@@ -3,24 +3,20 @@
   "version": "1.0.0",
   "description": "1st cypress tests",
   "scripts": {
-    "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run",
-    "cy:run:prod": "npx cypress run --config-file cypress-prod.config.js",
-    "cy:run:prod:chrome": "npx cypress run --config-file cypress-prod.config.js --browser chrome",
-    "cy:run:prod:electron": "npx cypress run --config-file cypress-prod.config.js --browser electron",
-    "cy:run:all": "npm run cy:run:prod:chrome && npm run cy:run:prod:electron",
-    "cy:run:chrome:dash": "cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963 --browser chrome",
-    "cy:run:all:dash": "cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963 --browser chrome && cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963 --browser electron",
-    "cy:run:stag": "npx cypress run --config-file cypress-staging.config.js",
-    "cy:dashboard:prod": "npx cypress run --config-file cypress-prod.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963",
-    "cy:dashboard:stag": "npx cypress run --config-file cypress-staging.config.js --record --key d1fa67a5-da82-4ad9-a00d-e083be769963"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:Sqlverifier": "cypress run --spec 'cypress/e2e/Sqlverifier/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de",
+    "cy:run:SqlverifierApi": "cypress run --spec 'cypress/e2e/SqlverifierApi/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de",
+    "cy:run:Sqlverifier:13:chrome": "cypress run --config-file 13inch.config.js --spec 'cypress/e2e/Sqlverifier/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de --browser chrome",
+    "cy:run:SqlverifierAPI:24:electron": "cypress run --config-file 24inch.config.js --spec 'cypress/e2e/SqlverifierApi/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de --browser electron",
+    "cy:parallel": "npm run cy:run:Sqlverifier -- --browser chrome --group SqlverifierChrome --ci-build-id 1 --parallel & npm run cy:run:SqlverifierApi -- --browser electron --group SqlverifierApiElectron --ci-build-id 1 --parallel"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YuliyaBanko/Cypress_tests.git"
   },
   "keywords": [
-    "cypresstests"
+    "cypresstests" 
   ],
   "author": "YBanko",
   "license": "ISC",
