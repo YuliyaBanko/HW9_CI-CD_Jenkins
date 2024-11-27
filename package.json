@@ -4,19 +4,19 @@
   "description": "1st cypress tests",
   "scripts": {
     "cy:open": "cypress open",
-  "cy:run": "cypress run",
-  "cy:run:Sqlverifier": "cypress run --spec 'cypress/e2e/Sqlverifier/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de",
-  "cy:run:SqlverifierApi": "cypress run --spec 'cypress/e2e/SqlverifierApi/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de",
-  "cy:run:Sqlverifier:13:chrome": "cypress run --config-file 13inch.config.js --spec 'cypress/e2e/Sqlverifier/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de --browser chrome",
-  "cy:run:SqlverifierAPI:24:electron": "cypress run --config-file 24inch.config.js --spec 'cypress/e2e/SqlverifierApi/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de --browser electron",
-  "cy:parallel": "npm run cy:run:Sqlverifier -- --browser chrome --group SqlverifierChrome --ci-build-id ${BUILD_NUMBER} --parallel & npm run cy:run:SqlverifierApi -- --browser electron --group SqlverifierApiElectron --ci-build-id ${BUILD_NUMBER} --parallel"
+    "cy:run": "cypress run",
+    "cy:run:Sqlverifier": "cypress run --spec 'cypress/e2e/Sqlverifier/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de",
+    "cy:run:SqlverifierApi": "cypress run --spec 'cypress/e2e/SqlverifierApi/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de",
+    "cy:run:Sqlverifier:13:chrome": "cypress run --config-file 13inch.config.js --spec 'cypress/e2e/Sqlverifier/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de --browser chrome",
+    "cy:run:SqlverifierAPI:24:electron": "cypress run --config-file 24inch.config.js --spec 'cypress/e2e/SqlverifierApi/*' --record --key aa357602-0723-44b4-934b-fcf7f14bc0de --browser electron",
+    "cy:parallel": "npm run cy:run:Sqlverifier -- --browser chrome --group SqlverifierChrome --ci-build-id $BUILD_NUMBER --parallel && npm run cy:run:SqlverifierApi -- --browser electron --group SqlverifierApiElectron --ci-build-id $BUILD_NUMBER --parallel"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YuliyaBanko/Cypress_tests.git"
   },
   "keywords": [
-    "cypresstests" 
+    "cypresstests"
   ],
   "author": "YBanko",
   "license": "ISC",
@@ -29,3 +29,4 @@
     "cypress": "^13.16.0"
   }
 }
+
