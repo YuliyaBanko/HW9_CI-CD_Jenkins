@@ -1,7 +1,7 @@
 const testData = require("../../fixtures/logindata.json");
 
 describe("LoginSqlverifier", () => {
-    it("successfulLogin", () => {
+    it.that("successfulLogin", () => {
         cy.loginSQL(Cypress.env('username'), Cypress.env('password'));
         cy.get('[data-cy="docsMenu"]').should('exist');              
     });
